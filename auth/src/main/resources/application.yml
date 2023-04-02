@@ -1,0 +1,33 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: auth
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8847
+        username: nacos
+        password: nacos
+  #dubbo:
+  #  registry:
+  #    address: nacos://127.0.0.1:8848
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/lisihong?serverTimezone=UTC&characterEncoding=UTF-8
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      timeout: 3000
+mybatis-plus:
+  mapper-locations: classpath*:mappers/*.xml
+jwt:
+  access-token-expiration-time: 600000
+  refresh-token-expiration-time: 100000000
+  max-device: 10
+
+
+
